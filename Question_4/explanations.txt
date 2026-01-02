@@ -1,0 +1,31 @@
+1. System Uptime Verification
+I executed the cat /proc/uptime command because the standard uptime tool is not available in my Windows Git Bash environment. The output displays two numbers: the first number represents the total number of seconds the system has been running since the last boot.
+
+2. User Process Listing
+I executed the ps command. This lists the running processes associated with the current shell session. The output includes the Process ID (PID), the User ID (UID), and the command name, allowing me to see exactly which programs are active in my current terminal environment.
+
+3. CPU Usage Analysis
+I executed a PowerShell command within the shell because the standard top command is not available in this environment. The command (Get-Process | Sort-Object CPU -Descending) listed the active processes sorted by CPU consumption, allowing me to identify which process was utilizing the highest amount of processor time.
+
+4. Background Process Execution
+I executed the sleep 500 & command to start a process that pauses for 500 seconds. The "&" symbol at the end of the command instructs the shell to run the process in the background. I then ran the jobs command, which successfully listed the running background process, verifying its execution status.
+
+5. Process Priority Management
+I executed a PowerShell command to change the process priority because the standard "renice" tool is not available in Git Bash on Windows. I first used the ps command to locate the WINPID (Windows Process ID) of my background sleep process (which was 28500). Then, I used PowerShell to change its PriorityClass to 'BelowNormal', effectively lowering its priority similar to the Unix renice command.
+
+6. Memory Usage Monitoring
+I executed a command to display system memory usage. Since the standard "free" command was unavailable in this environment, I used cat /proc/meminfo | head -n 5 to read the system's memory information file directly. This output provided human-readable details regarding the total available physical memory (MemTotal) and the amount currently unused (MemFree).
+
+7. Disk Space Inspection
+I executed the df -h ~ command. This command reports the file system disk space usage for the partition containing the home directory (~). The -h flag displays the size, used space, and available space in a human-readable format (e.g., Gigabytes), allowing me to verify the storage capacity of the drive hosting my user data.
+
+8. Shell Identification
+I executed the echo $SHELL command. This command prints the value of the SHELL environment variable, which stores the path to the current user's default login shell. The output confirms that I am operating within the bash shell environment.
+
+9. Output Redirection
+I executed the "uname -a" command (which displays system information) and used the ">" redirection operator to send its output into a file named system_report.txt. I then used the cat command to display the contents of the file, verifying that the system information was successfully captured and stored.
+
+10. Disk Usage Visualization
+I attempted to execute the ncdu command to visualize disk usage. However, the system returned a "command not found" error, indicating that the ncdu tool is not installed in this environment. As the assignment restricts making configuration changes (installing new software), I could not proceed with this specific visualization tool.
+
+

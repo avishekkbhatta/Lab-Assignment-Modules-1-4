@@ -1,0 +1,21 @@
+1. Project Workspace Setup: I used the mkdir command to create a new directory named documents. This directory will serve as the storage location for project-related files.
+
+2. File Creation: I used the cd command to navigate into the documents directory. Once inside, I used the touch command to create a new, empty file named plan.txt.
+
+3. Content Addition: I used the echo command to generate a specific text string and the redirection operator (>) to write that text into the plan.txt file. I then used the cat command to display the file's contents to verify the write operation was successful.
+
+4. File Metadata Verification: I used the ls -l command to display the long-format listing for plan.txt. This output verifies the file's metadata, including read/write permissions, the owner's username, the group associated with the file, the file size, and the modification timestamp.
+
+5. File Duplication: I used the cp command to duplicate the existing plan.txt file, creating an identical copy named plan_copy.txt. I then used ls -l to verify that both the original file and the new copy exist in the directory.
+
+6. Directory Renaming: I first used cd .. to navigate back to the parent directory. Then, I used the mv command to rename the documents directory to project_documents to better reflect its contents.
+
+7. Archival Structure: I navigated back into the project_documents directory using cd. Then, I used the mkdir command to create a new subdirectory named archive to serve as a storage location for older files.
+
+8. File Organization: I used the mv command to relocate the plan_copy.txt file into the archive subdirectory. I then listed the contents of both the current directory and the archive directory to confirm the file was successfully moved.
+
+9. Recursive Listing: I executed the ls command with the -R flag. This option forces the command to list not only the files in the current directory but also the contents of all subdirectories, displaying the complete directory structure.
+
+10. Path Verification: I used the readlink command with the -f flag to display the full absolute path of plan_copy.txt inside the archive directory. This confirms the file's exact location within the system's file hierarchy.
+
+

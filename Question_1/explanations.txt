@@ -1,0 +1,19 @@
+1. User Identity Verification: I used the id command to display my currently logged-in username and group memberships. The output confirms that I am logged in as user 'inavi' and displays the associated group IDs.
+
+2. Workspace Validation: I used the pwd command to verify the absolute path of my current working directory. Then, I used the ls -l command to perform a long format listing, which displays all files and directories along with their permissions, ownership, and modification times.
+
+3. Environment Confirmation File: I used the echo command to generate the specific text string "Linux user environment verified" and used the output redirection operator (>) to write this string directly into a new file named user_info.txt.
+
+4. File Integrity Check: I used the wc command with the -m option to count the specific number of characters in user_info.txt. The output displays the character count followed by the filename, verifying the content length.
+
+5. Learning the Tools: I used mkdir --help to view the command options. I identified the -p (parents) option, which allows the command to create parent directories as needed (e.g., mkdir -p parent/child) without error.
+
+6. Home Directory Inspection: I used the ls -l command combined with the tilde (~), which is the shorthand for the current user's home directory. This listed the contents of my home directory in long format, which is sorted alphabetically by default.
+
+7. Log Investigation: I used the grep command to search for the specific string "admin" within the file named log.txt. The command filtered the file contents and displayed only the lines containing the matching keyword.
+
+8. System Information Check: I ran the uname command with the -r flag to specifically print the kernel release version currently running on the system.
+
+9. Network Connectivity Test: I verified network connectivity by using the ping command to send ICMP echo request packets to www.google.com. I used the -n 4 option to limit the test to exactly four packets.
+
+10. System Health Awareness: Since the standard uptime command is unavailable in the Windows Git Bash environment, I used the net statistics workstation command to display the exact date and time the system was last booted ("Statistics since"), verifying the system's operational duration.

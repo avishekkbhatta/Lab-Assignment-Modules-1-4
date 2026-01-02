@@ -1,0 +1,32 @@
+1. File Creation: 
+I used the echo command with the redirection operator (>) to create a file named sample_data.txt containing a simple string of text. I verified the content using the cat command.
+
+2. Hard Link Creation 
+I used the ln command (without any flags) to create a hard link named sample_hard.txt that points to the original sample_data.txt file. This creates a second name for the exact same physical data on the disk.
+
+3. Symbolic Link Creation 
+I used the ln command with the -s (symbolic) flag to create a soft link named sample_soft.txt. Unlike a hard link, this file acts as a pointer or shortcut to the original file rather than a direct mirror of the data.
+
+4. Inode Verification 
+I used the ls command with the -i (inode) flag to display the index numbers for the original file, the hard link, and the soft link. This allows us to see which files share the same physical location on the disk.
+
+5. Inode Analysis 
+Upon inspection, I observed that sample_data.txt and sample_hard.txt share the exact same Inode number. This is because a hard link is essentially a mirror of the original file pointing to the same physical data blocks on the drive. The soft link (sample_soft.txt) has a different Inode number because it is a separate file that merely points to the path of the original.
+
+6. File Metadata Inspection
+I executed the stat command on sample_data.txt. This displays comprehensive metadata including the file size, inode number, permissions (Access), User ID (Uid), Group ID (Gid), and the three critical timestamps: Access (atime), Modify (mtime), and Change (ctime).
+
+7. Disk Usage Check
+I executed the du -sh . command. I initially attempted to check the home directory, but the command stalled due to the large volume of files in OneDrive. I switched to checking the current directory (.) using the -h flag, which successfully displayed the disk usage in a human-readable format.
+
+8. File Size Overview
+I executed the ls -lh ~ command. The -l flag provides a long listing format that includes permissions, ownership, and modification dates. The -h flag converts the file sizes into human-readable units (like KB or MB), allowing me to easily identify the size of each file in my home directory.
+
+9. Link Deletion Test
+I executed the rm sample_soft.txt command to delete the symbolic link. Afterwards, I ran ls -l sample_data.txt to verify that the original file still exists. This confirms that deleting a symbolic link only removes the pointer (the shortcut) and does not affect the actual data stored in the original file.
+
+10. Disk Utility Demonstration
+I executed two commands to analyze disk space. 
+First, I ran df -h (Disk Free), which displays the available disk space on all mounted file systems in a human-readable format.
+Second, I ran du -sh . (Disk Usage), which summarizes the space consumed specifically by the current directory.
+The key difference is that df shows free space for the whole drive, while du calculates the space used by specific files and folders.
